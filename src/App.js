@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { routeHome } from "./router";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import BackToTop from "./components/BackToTop";
+
+import HomeTemplate from "./container/HomeTemplate";
+
+import PageNotFound from "./container/PageNotFound";
+
+class App extends Component {
+  render() {
+    const showLayoutHome = (route) => {
+      if (route && route.length > 0) {
+        return route.map((item, index) => {
+          return (
+            <HomeTemplate
+              key={index}
+              exact={item.exact}
+              path={item.path}
+              Component={item.component}
+            />
+          );
+        });
+      }
+    };
+    return (
+      <BrowserRouter>
+        <Switch>
+          {showLayoutHome(routeHome)}
+          <Route path="" component={PageNotFound} />
+        </Switch>
+        <BackToTop />
+      </BrowserRouter>
+    );
+  }
 }
 
-export default App;
+export default connect()(App);
