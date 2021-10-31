@@ -1,2 +1,8 @@
-@import "./helper/reset";
+@import "./base/reset";
+
+@import "./helper/variable";
+
 @import "./components/navbar";
+@import "./container//Home/Slider";
+@import "./components/button";
+@import "./container/Home/footer";

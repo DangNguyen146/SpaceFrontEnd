@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -16,9 +16,9 @@ export default function PageNotFound() {
             Trở về trang chủ
             <br />
             <Link to="/" replace className="text-decoration-none">
-              <Button color="secondary" className="btn">
+              <button color="secondary" className="btn">
                 Home
-              </Button>
+              </button>
             </Link>
           </p>
         </div>
