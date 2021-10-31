@@ -1,27 +1,18 @@
-import {
-  USER_CREATE_REQUEST,
-  USER_CREATE_SUCCESS,
-  USER_CREATE_FAILED,
-} from "./constant";
+import { USER_CREATE_REQUEST, USER_CREATE_FAILED } from "./constant";
 import Axios from "axios";
+import { urlApi } from "../../../../../config/api";
 
 export const fetchCreateApi = (user, history) => {
   return (dispatch) => {
     dispatch(actCreateRequest());
     Axios({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
+      url: urlApi + "users/",
       method: "POST",
       data: user,
     })
       .then((result) => {
-        if (result.data.maLoaiNguoiDung === "KhachHang") {
-          dispatch(actCreateSuccess(result.data));
-          localStorage.setItem("userKH", JSON.stringify(result.data));
+        if (result) {
           history.push("/");
-        } else {
-          return Promise.reject({
-            response: { data: "Lỗi" },
-          });
         }
       })
       .catch((err) => {
@@ -33,13 +24,6 @@ export const fetchCreateApi = (user, history) => {
 const actCreateRequest = () => {
   return {
     type: USER_CREATE_REQUEST,
-  };
-};
-
-const actCreateSuccess = (data) => {
-  return {
-    type: USER_CREATE_SUCCESS,
-    payload: data,
   };
 };
 

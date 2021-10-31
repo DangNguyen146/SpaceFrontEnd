@@ -49,7 +49,7 @@ export default class BackToTop extends Component {
               height: 50,
             }}
           >
-            <i class="text-dark fa fa-sort-up pt-3"></i>
+            <i className="text-dark fa fa-sort-up pt-3"></i>
           </div>
         )}
       </div>

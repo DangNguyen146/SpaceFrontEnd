@@ -4,26 +4,34 @@ import {
   USER_LOGIN_FAILED,
 } from "./constant";
 import Axios from "axios";
-import { Redirect } from "react-router";
+import { urlApi } from "../../../../../config/api";
 
 export const fetchLoginApi = (user, history) => {
   return (dispatch) => {
-    dispatch(actLoginRequest());
+    actLoginRequest();
     Axios({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      url: urlApi + "o/token/",
       method: "POST",
       data: user,
     })
       .then((result) => {
-        if (result.data.maLoaiNguoiDung === "KhachHang") {
-          dispatch(actLoginSuccess(result.data));
-          localStorage.setItem("userKH", JSON.stringify(result.data));
-          if (localStorage.getItem("idDatVe") !== null) {
-            let temp = JSON.parse(localStorage.getItem("idDatVe"));
-            history.push("/datve/" + temp);
-          } else {
-            history.push("/");
-          }
+        const data = result.data;
+        if (data) {
+          localStorage.setItem(
+            "access_token",
+            JSON.stringify(data.access_token)
+          );
+          Axios.get(urlApi + "users/current-user/", {
+            headers: {
+              Authorization: "Bearer " + data.access_token,
+            },
+          })
+            .then((res) => {
+              localStorage.setItem("userKH", JSON.stringify(res.data));
+              dispatch(actLoginSuccess(res.data));
+              history.push("/");
+            })
+            .catch((error) => console.log(error));
         } else {
           return Promise.reject({
             response: { data: "Lỗi" },

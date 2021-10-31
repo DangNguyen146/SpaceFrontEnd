@@ -1,0 +1,33 @@
+.navbar-light {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9;
+  .container-fluid {
+    .navbar-nav {
+      li {
+        a {
+          position: relative;
+          &::after {
+            content: "";
+            height: 3px;
+            position: absolute;
+            background: $pink;
+            left: 0;
+            width: 0%;
+            bottom: -5px;
+            transition: all 0.5s;
+          }
+          &:hover {
+            color: $purple;
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
