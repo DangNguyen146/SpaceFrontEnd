@@ -9,6 +9,9 @@ import HomeTemplate from "./container/HomeTemplate";
 
 import PageNotFound from "./container/PageNotFound";
 
+import { createAction } from "./container/HomeTemplate/AccUser/Login/modules/actionforLogin";
+import { USER_LOGIN_SUCCESS } from "./container/HomeTemplate/AccUser/Login/modules/constant";
+
 class App extends Component {
   render() {
     const showLayoutHome = (route) => {
@@ -34,6 +37,16 @@ class App extends Component {
         <BackToTop />
       </BrowserRouter>
     );
+  }
+  _getLoginInLocal = () => {
+    const user = localStorage.getItem("userKH");
+    if (user) {
+      this.props.dispatch(createAction(USER_LOGIN_SUCCESS, JSON.parse(user)));
+    }
+  };
+
+  componentDidMount() {
+    this._getLoginInLocal();
   }
 }
 

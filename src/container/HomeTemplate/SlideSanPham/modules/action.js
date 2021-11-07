@@ -2,11 +2,15 @@ import * as ActionType from "./constant";
 import Axios from "axios";
 import { urlApi } from "../../../../config/api";
 
-export const actLisCardApi = () => {
+export const actLisCardApi = (category_id) => {
+  let urls = urlApi + "cards/?page=1";
+  if (category_id) {
+    urls = urlApi + "cards/?category_id=" + category_id;
+  }
   return (dispatch) => {
     dispatch(actLisCardApiRequest());
     Axios({
-      url: urlApi + "cards/?page=1",
+      url: urls,
       method: "GET",
     })
       .then((result) => {

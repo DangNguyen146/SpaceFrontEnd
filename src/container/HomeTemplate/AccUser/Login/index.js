@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { fetchLoginApi } from "./modules/action";
 import { connect } from "react-redux";
-import Loader from "./../../../../components/Loader";
 import Axios from "axios";
 import { urlApi } from "../../../../config/api";
+import Loading from "../../../../components/Loading";
 
 class Login extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Login extends Component {
   };
   renderLoding = () => {
     const { loading } = this.props;
-    if (loading) return <Loader />;
+    if (loading) return <Loading />;
     return (
       <input type="submit" defaultValue="Đăng nhập" className="btn solid" />
     );

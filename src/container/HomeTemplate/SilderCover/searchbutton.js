@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Searchbutton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pagram: "",
+    };
+  }
+  handleOnChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
   render() {
     return (
       <div className="container button-tranform">
@@ -15,14 +28,17 @@ class Searchbutton extends Component {
                   placeholder="Tìm kiếm sản phẩm"
                   aria-label="Tìm kiếm sản phẩm"
                   aria-describedby="button-addon2"
+                  name="pagram"
+                  onChange={this.handleOnChange}
                 />
-                <button
+                <Link
                   className="btn btn-outline-secondary border-0"
                   type="button"
                   id="button-addon2"
+                  to={"/search/" + this.state.pagram}
                 >
-                  <i class="fa fa-search px-2 text-light"></i>
-                </button>
+                  <i className="fa fa-search px-2 text-light"></i>
+                </Link>
               </div>
               <div>
                 <hr className="w-100 d-block my-0 bg-light" />

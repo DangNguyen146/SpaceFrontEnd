@@ -14,7 +14,7 @@ export default class HomePage extends Component {
       mobile: false,
       live: true,
     });
-    document.title = "Trang chủ | Space";
+    document.title = "Space | Trang chủ";
     wow.init();
   }
   render() {
