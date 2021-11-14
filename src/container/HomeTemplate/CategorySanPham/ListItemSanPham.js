@@ -5,7 +5,9 @@ import ListCardItem from "../../../components/CardItem";
 
 class ListItemSanPham extends Component {
   componentDidMount() {
-    this.props.fetchListCard();
+    const { category_id } = this.props;
+
+    this.props.fetchListCard(category_id);
   }
   render() {
     const renderHtml = () => {
@@ -39,8 +41,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchListCard: () => {
-      dispatch(actLisCardApi());
+    fetchListCard: (category_id) => {
+      dispatch(actLisCardApi(category_id));
     },
   };
 };

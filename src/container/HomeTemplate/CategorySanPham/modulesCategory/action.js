@@ -2,7 +2,7 @@ import * as ActionType from "./constant";
 import Axios from "axios";
 import { urlApi } from "../../../../config/api";
 
-export const actLisCategoryApi = () => {
+export const actLisCategoryApi = (category_id) => {
   return (dispatch) => {
     dispatch(actLisCategoryApiRequest());
     Axios({
@@ -11,7 +11,6 @@ export const actLisCategoryApi = () => {
     })
       .then((result) => {
         const data = result;
-        console.log(data);
         if (data) dispatch(actLisCategoryApiSuccess(result.data));
       })
       .catch((err) => {

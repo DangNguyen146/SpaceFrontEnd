@@ -25,14 +25,20 @@ class User extends Component {
           </a>
           <ul className="dropdown-menu dropdown-menu-lg-end">
             <li>
-              <a className="dropdown-item" href="#">
-                Menu item
-              </a>
+              <Link className="dropdown-item" to="/donhangdadat">
+                Đơn hàng đã đặt
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
-                Menu item
-              </a>
+              <Link className="dropdown-item" to="/quanlidonhang">
+                Quản lí đơn hàng
+              </Link>
+            </li>
+            <hr />
+            <li>
+              <Link className="dropdown-item" to="/quanlytaikhoan">
+                Quản lý tài khoản
+              </Link>
             </li>
             <li>
               <Link

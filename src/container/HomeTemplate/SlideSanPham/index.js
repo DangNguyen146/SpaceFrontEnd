@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { actLisCardApi } from "./modules/action";
 import Slider from "react-slick";
 import ListCardItem from "../../../components/CardItem";
+import Loading from "../../../components/Loading";
 
 class SlideSanPham extends Component {
   componentDidMount() {
@@ -18,12 +19,7 @@ class SlideSanPham extends Component {
     };
     const renderHtml = () => {
       const { loading, data } = this.props;
-      if (loading)
-        return (
-          <div className="spinner-border text-warning" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        );
+      if (loading) return <Loading />;
       return (
         data &&
         data.map((item, i) => {

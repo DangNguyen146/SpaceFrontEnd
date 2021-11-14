@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Loader from "../../../../components/Loader";
 import { fetchCreateApi } from "./modules/action";
 import { connect } from "react-redux";
+import Loading from "../../../../components/Loading";
 
 class CreateAcc extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class CreateAcc extends Component {
   };
   render() {
     const { loading } = this.props;
-    if (loading) return <Loader />;
+    if (loading) return <Loading />;
     return (
       <section
         className="loginPage container-fluid p-0"

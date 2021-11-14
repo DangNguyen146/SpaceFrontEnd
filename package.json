@@ -56,5 +56,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dom-to-image": "^2.6.0",
+    "react-inner-image-zoom": "^2.1.0"
   }
 }
