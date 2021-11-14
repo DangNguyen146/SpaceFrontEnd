@@ -3,7 +3,6 @@ import Axios from "axios";
 import { urlApi } from "../../../../config/api";
 
 export const actLisCategoryApi = (category_id) => {
-  console.log(category_id);
   return (dispatch) => {
     dispatch(actLisCategoryApiRequest());
     Axios({

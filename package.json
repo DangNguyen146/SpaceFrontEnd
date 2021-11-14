@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "dom-to-image": "^2.6.0",
     "react-inner-image-zoom": "^2.1.0"
   }
 }

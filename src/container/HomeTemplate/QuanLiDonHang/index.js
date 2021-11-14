@@ -147,7 +147,11 @@ class QuanLiDonHang extends Component {
                 <div className="bg-dark w-100 my-4" style={{ height: 2 }}></div>
                 <div className="collapse" id="collapseExample">
                   <div className="container">
-                    <form onSubmit={this.handleSubmit} action="#">
+                    <form
+                      onSubmit={this.handleSubmit}
+                      action="#"
+                      enctype="multipart/form-data"
+                    >
                       <div className="row">
                         <div className="col-12 col-md-6 mb-3">
                           <label
