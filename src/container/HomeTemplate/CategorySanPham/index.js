@@ -50,7 +50,7 @@ class CategorySanPham extends Component {
   render() {
     return (
       <div
-        className="container-fluid shadow py-0"
+        className="container-fluid shadow py-0 "
         style={{
           backgroundColor: "#fff",
         }}
@@ -104,7 +104,7 @@ class CategorySanPham extends Component {
               minHeight: "1569",
             }}
           >
-            <div className="px-2 row">
+            <div className="px-2 row" style={{ minHeight: "90vh" }}>
               <ListItemSanPham
                 key={Math.random()}
                 category_id={this.state.category_id}

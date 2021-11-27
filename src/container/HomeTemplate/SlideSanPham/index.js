@@ -22,7 +22,7 @@ class SlideSanPham extends Component {
       if (loading) return <Loading />;
       return (
         data &&
-        data.map((item, i) => {
+        data.results.map((item, i) => {
           return <ListCardItem key={i} card={item} height={200} />;
         })
       );

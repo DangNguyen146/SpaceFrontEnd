@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "animate.css/animate.min.css";
 import "animate.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css'
@@ -13,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "popper.js/dist/umd/popper.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
+
 
 import "./scss/main.scss";
 

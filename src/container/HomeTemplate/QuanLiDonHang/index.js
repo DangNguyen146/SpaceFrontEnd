@@ -3,6 +3,7 @@ import { GiamSoLuong, TangSoLuong, HuySanPham } from "./Modules/action";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { actOrderApi } from "./modulesSubmit/action";
+import Breadcrumb from "../../../components/Breadcrumb";
 
 class QuanLiDonHang extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class QuanLiDonHang extends Component {
       address: "",
       place: "",
       phone: "",
+      link: "",
       items: [],
     };
   }
@@ -24,7 +26,7 @@ class QuanLiDonHang extends Component {
       const obj = {
         card: item.id,
         quantity: item.soLuong,
-        price: 1000,
+        price: this.renderTien(),
       };
       itemss.push(obj);
     }
@@ -42,8 +44,19 @@ class QuanLiDonHang extends Component {
     e.preventDefault();
     this.props.fetchSubmit(this.state, this.props.history);
   };
+  renderTien = () => {
+    let sum = 0;
+    if (this.props.dangSachCardDangDat.length !== 0) {
+      this.props.dangSachCardDangDat.map((item, index) => {
+        sum = sum + parseInt(item.giaCard);
+      });
+    }
+
+    return sum;
+  };
   renderHTML = () => {
     if (this.props.dangSachCardDangDat.length !== 0) {
+      console.log(this.props.dangSachCardDangDat);
       return this.props.dangSachCardDangDat.map((item, index) => {
         return (
           <>
@@ -60,7 +73,7 @@ class QuanLiDonHang extends Component {
                     </div>
                     <div className="col-5">Giá sản phẩm: </div>
                     <div className="col-7">
-                      <i className="pb-0">{item.price} VNĐ</i>
+                      <i className="pb-0">{item.giaCard} VNĐ</i>
                     </div>
                     <div className="col-12 col-md-5">Số lượng sản phẩm:</div>
                     <button
@@ -113,16 +126,14 @@ class QuanLiDonHang extends Component {
     return (
       <>
         <div className="mb-5" style={{ marginTop: 100 }}>
-          <section className="container mb-5">
-            <Link className="text-decoration-none" to="/">
-              <h4 className="d-inline text-dark">Trang chủ </h4>
-            </Link>
-            <i className="fa fa-angle-double-right"></i>
-            <Link className="text-decoration-none" to="/quanlidonhang">
-              <h4 className="d-inline text-dark"> Quản lí đơn hàng</h4>
-            </Link>
-          </section>
-          <div style={{ height: 1 }} className="bg-dark mt-2 mb-4"></div>
+          <Breadcrumb
+            key={99999}
+            text1={"Trang chủ"}
+            link1={"/"}
+            text2={"Quản lí đơn hàng"}
+            link2={"#"}
+          />
+
           <div className="container bg-white">
             <div className="row shadow rounded">
               <div className="col-12 mt-4">
@@ -133,9 +144,14 @@ class QuanLiDonHang extends Component {
               </div>
               <div className="col-12 col-md-4">
                 <h3>Chi tiết đơn hàng</h3>
-                <p>Số mặt hàng: {this.props.dangSachCardDangDat.length}</p>
+                <p className="mb-2">
+                  Số mặt hàng: {this.props.dangSachCardDangDat.length}
+                </p>
+                <p className="mb-2" id="giaCard">
+                  Tồng số tiền: {this.renderTien()} vnđ
+                </p>
                 <a
-                  className="btn btn-dark bg-dark text-light px-5"
+                  className="btn btn-success px-5"
                   href="#collapseExample"
                   data-bs-toggle="collapse"
                   onClick={this.getItems}
@@ -225,6 +241,18 @@ class QuanLiDonHang extends Component {
                             className="form-control"
                             name="phone"
                             id="InputPhone"
+                            onChange={this.handleOnChange}
+                          />
+                        </div>
+                        <div className="col-12 col-md-6 mb-3">
+                          <label htmlFor="InputLink" className="form-label">
+                            Link
+                          </label>
+                          <input
+                            type="link"
+                            className="form-control"
+                            name="link"
+                            id="InputLink"
                             onChange={this.handleOnChange}
                           />
                         </div>

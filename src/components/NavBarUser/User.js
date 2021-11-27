@@ -36,6 +36,17 @@ class User extends Component {
             </li>
             <hr />
             <li>
+              <Link className="dropdown-item" to="/user/dasboard">
+                Face manager
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item" to="/quanlypreview">
+                Quản lí Preview
+              </Link>
+            </li>
+            <hr />
+            <li>
               <Link className="dropdown-item" to="/quanlytaikhoan">
                 Quản lý tài khoản
               </Link>

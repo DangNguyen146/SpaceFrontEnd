@@ -10,6 +10,10 @@ import ManagerUser from "../container/HomeTemplate/ManagerUser";
 import CreateUserPublic from "../container/HomeTemplate/CreateUserPublic";
 import PageViewUser from "../container/HomeTemplate/PageViewUser";
 import TaoCard from "../container/HomeTemplate/TaoCard";
+import PageReviewCard from "../container/HomeTemplate/PageReviewCard";
+import QuanLyPreview from "../container/HomeTemplate/QuanLyPreview";
+import Contact from "../container/HomeTemplate/Contact";
+import DetailDonHangDaDat from "../container/HomeTemplate/DonHangDaDat/DetailDonHangDaDat";
 
 const routeHome = [
   {
@@ -53,18 +57,38 @@ const routeHome = [
     exact: false,
   },
   {
+    path: "/detaildonhangdadat/:id",
+    component: DetailDonHangDaDat,
+    exact: false,
+  },
+  {
     path: "/quanlytaikhoan",
     component: ManagerUser,
     exact: false,
   },
   {
-    path: "/createuserpublic",
+    path: "/user/dasboard",
     component: CreateUserPublic,
+    exact: false,
+  },
+  {
+    path: "/preview/:id",
+    component: PageReviewCard,
+    exact: false,
+  },
+  {
+    path: "/quanlypreview",
+    component: QuanLyPreview,
     exact: false,
   },
   {
     path: "/view/:username",
     component: PageViewUser,
+    exact: false,
+  },
+  {
+    path: "/contact",
+    component: Contact,
     exact: false,
   },
   {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { routeHome } from "./router";
@@ -34,7 +35,8 @@ class App extends Component {
           {showLayoutHome(routeHome)}
           <Route path="" component={PageNotFound} />
         </Switch>
-        <BackToTop />
+        {/* <Notication key={1} /> */}
+        <BackToTop key={2} />
       </BrowserRouter>
     );
   }

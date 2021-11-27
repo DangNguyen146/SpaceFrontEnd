@@ -9,28 +9,33 @@ class ListCard extends Component {
     this.props.fetchDetailCard(card);
   }
   render() {
-    const { data, card, loading, sl, price } = this.props;
+    const { data, loading, sl, price } = this.props;
+    console.log(data);
     if (loading) return <Loading />;
     return (
-      <>
-        <div className="col-3">
-          <img src="" alt="" className="w-100" />
-        </div>
-        <div className="col-9">
-          <p>
-            <strong className="me-3">Tên: </strong>
-            {card}
-          </p>
-          <p>
-            <strong className="me-3">Số lượng: </strong>
-            {sl}
-          </p>
-          <p>
-            <strong className="me-3">Giá: </strong>
-            {price}
-          </p>
-        </div>
-      </>
+      data && (
+        <>
+          <div className="row">
+            <div className="col-6 col-md-3">
+              <img src={data.image} alt="" className="w-100" />
+            </div>
+            <div className="col-6 col-md-9">
+              <p>
+                <strong className="me-3">Tên: </strong>
+                {data.name}
+              </p>
+              <p>
+                <strong className="me-3">Số lượng: </strong>
+                {sl}
+              </p>
+              <p>
+                <strong className="me-3">Giá: </strong>
+                {price}
+              </p>
+            </div>
+          </div>
+        </>
+      )
     );
   }
 }

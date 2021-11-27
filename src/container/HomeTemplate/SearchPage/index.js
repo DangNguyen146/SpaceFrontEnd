@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ListCardItem from "../../../components/CardItem";
+import Footer from "../Footer";
 import SilderCover from "../SilderCover";
 import { actSearchCardApi } from "./modules/action";
 
 class SearchPage extends Component {
   componentDidMount() {
-    document.title = "Space | Tìm kiếm sản phẩm";
     const pagram = this.props.match.params.pagram;
+    document.title = "Space | Tìm kiếm sản phẩm " + pagram;
     this.props.fetchListSearchCard(pagram);
   }
   render() {
@@ -33,7 +34,7 @@ class SearchPage extends Component {
     return (
       <div className="mt-5">
         <SilderCover />
-        <section>
+        <section style={{ minHeight: "80vh" }}>
           <h2
             className="fw-bold text-center mt-3 mb-5"
             style={{
@@ -46,6 +47,7 @@ class SearchPage extends Component {
             <div className="row">{renderHtml()}</div>
           </div>
         </section>
+        <Footer key={55555} />
       </div>
     );
   }
