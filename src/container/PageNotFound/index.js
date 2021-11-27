@@ -1,28 +1,27 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 export default function PageNotFound() {
   return (
-    <div className="pagenotFound">
+    <section className="page_404 pt-5 mt-5">
       <div className="container">
-        <div className="boo-wrapper">
-          <div className="boo">
-            <div className="face" />
+        <div className="row">
+          <div className="col-sm-12 ">
+            <div className="col-sm-10 col-sm-offset-1 w-100 text-center">
+              <div className="four_zero_four_bg">
+                <h1 className="text-center ">404</h1>
+              </div>
+              <div className="contant_box_404">
+                <h3 className="h2">Look like you're lost</h3>
+                <p>the page you are looking for not avaible!</p>
+                <Link to="/" className="btn btn-success link_404">
+                  Go to Home
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="shadow" />
-          <h1>404 Not Found!!!</h1>
-          <p>
-            Trở về trang chủ
-            <br />
-            <Link to="/" replace className="text-decoration-none">
-              <button color="secondary" className="btn">
-                Home
-              </button>
-            </Link>
-          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -53,9 +53,18 @@ export default class NavbarHome extends Component {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link mx-2  fw-2 fw-bold"
+                  className="nav-link mx-2 text-dark  fw-2 fw-bold"
                   aria-current="page"
-                  to="#"
+                  to="/taocard"
+                >
+                  Tạo thẻ
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link mx-2 text-dark  fw-2 fw-bold"
+                  aria-current="page"
+                  to="/contact"
                 >
                   Liên hệ
                 </NavLink>

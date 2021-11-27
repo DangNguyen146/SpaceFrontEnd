@@ -9,13 +9,7 @@ import SlideSanPham from "../SlideSanPham";
 
 export default class HomePage extends Component {
   componentDidMount() {
-    const wow = new WOW({
-      offset: 100,
-      mobile: false,
-      live: true,
-    });
     document.title = "Space | Trang chủ";
-    wow.init();
   }
   render() {
     return (

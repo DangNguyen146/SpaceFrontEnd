@@ -6,7 +6,7 @@ export default class ListCardItem extends Component {
     const { card, height } = this.props;
     return (
       <div className="px-2">
-        <div className="card">
+        <div className="card" style={{ minHeight: 350 }}>
           <Link to={"/detail/" + card.id}>
             <img
               src={card.image}

@@ -17,7 +17,7 @@ class Login extends Component {
     };
   }
   componentDidMount() {
-    document.title = "Đăng nhập | Space";
+    document.title = "Space | Đăng nhập";
 
     Axios.get(urlApi + `oauth2-info/`)
       .then((res) => {
@@ -46,7 +46,11 @@ class Login extends Component {
   renderNoti = () => {
     const { err } = this.props;
     if (err)
-      return <div className="alert alert-danger p-2">{err.response.data}</div>;
+      return (
+        <div className="alert alert-danger p-2">
+          Sai tên đăng nhập hoặc mật khẩu
+        </div>
+      );
   };
   renderLoding = () => {
     const { loading } = this.props;
@@ -62,7 +66,7 @@ class Login extends Component {
         style={{
           backgroundImage:
             "url(" + process.env.PUBLIC_URL + "/img/backgroud.png)",
-          height: "95vh",
+          height: "100vh",
           backgroundSize: "cover",
         }}
       >
@@ -90,6 +94,7 @@ class Login extends Component {
                 <div className="col-6 p-0">
                   <div className="container py-5 rounded shadow overflow-hidden">
                     <h2 className="text-center">Đăng nhập</h2>
+
                     <form onSubmit={this.handleLogin} action="#">
                       <div className="mb-3">
                         <label
@@ -134,6 +139,7 @@ class Login extends Component {
                           Lưu đăng nhập
                         </label>
                       </div>
+                      {this.renderNoti()}
                       <div className="col-12 text-center">
                         <button
                           type="submit"

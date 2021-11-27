@@ -1,0 +1,8 @@
+#container .createcard {
+  width: 550px !important;
+  height: 350px !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}

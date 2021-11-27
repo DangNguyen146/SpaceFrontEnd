@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Buttonthemoi extends Component {
   render() {
@@ -7,9 +8,12 @@ class Buttonthemoi extends Component {
         <div className="row">
           <div className="d-none d-md-block col"></div>
           <div className="col-12 text-center">
-            <button className="w-50 creatnewcard text-center mx-auto">
+            <Link
+              className="w-50 creatnewcard text-center mx-auto"
+              to="/taocard"
+            >
               <h2 className="p-2 m-0">Tạo một thẻ mới!!!</h2>
-            </button>
+            </Link>
           </div>
           <div className="d-none d-md-block col"></div>
         </div>
