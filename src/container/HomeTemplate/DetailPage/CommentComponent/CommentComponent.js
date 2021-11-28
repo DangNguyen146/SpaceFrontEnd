@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Loading from "../../../../components/Loading";
-import {
-  actCommentDetailCardApi,
-  actDeleteCommentApi,
-  actPacthCommentApi,
-} from "./modules/action";
+import { actCommentDetailCardApi } from "./modules/action";
 import "./comment.css";
 import { urlImagApi } from "../../../../config/api";
 import XuLiBinhLuan from "./XuLiBinhLuan";
@@ -33,7 +29,10 @@ class CommentComponent extends Component {
               <div className="d-flex justify-content-between align-items-center">
                 <div className="user d-flex flex-row align-items-center">
                   <img
-                    src={urlImagApi + item.creator.avatars}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/img/default-profile-picture.png"
+                    }
                     width={30}
                     className="user-img rounded-circle mr-2"
                   />
@@ -74,7 +73,9 @@ class CommentComponent extends Component {
             <div className="d-flex justify-content-between align-items-center">
               <div className="user d-flex flex-row align-items-center">
                 <img
-                  src={urlImagApi + data2.creator.avatars}
+                  src={
+                    process.env.PUBLIC_URL + "/img/default-profile-picture.png"
+                  }
                   width={30}
                   className="user-img rounded-circle mr-2"
                 />
@@ -115,8 +116,6 @@ const mapStateToProps = (state) => {
 
     loading2: state.userPostCommentReducer.loading,
     data2: state.userPostCommentReducer.data,
-
-    data3: state.userPostCommentReducer.data,
   };
 };
 
@@ -124,12 +123,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchCommentDetailCard: (id) => {
       dispatch(actCommentDetailCardApi(id));
-    },
-    fetchDeleteComment: (id) => {
-      dispatch(actDeleteCommentApi(id));
-    },
-    fetchPatchComment: (content, id) => {
-      dispatch(actPacthCommentApi(content, id));
     },
   };
 };
