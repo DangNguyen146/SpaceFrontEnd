@@ -69,7 +69,7 @@ class Login extends Component {
               }}
             >
               <div className="row">
-                <div className="col-6 p-0">
+                <div className="col-6 d-none d-md-block p-0">
                   <div
                     className="h-100"
                     style={{
@@ -80,7 +80,7 @@ class Login extends Component {
                     }}
                   ></div>
                 </div>
-                <div className="col-6 p-0">
+                <div className="col-12 col-md-6 p-0">
                   <div className="container py-5 rounded shadow overflow-hidden">
                     <h2 className="text-center">Đăng nhập</h2>
 

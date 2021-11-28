@@ -32,8 +32,8 @@ class BackGround extends Component {
               <div
                 className={
                   this.state.id === item.id
-                    ? "col-3 border active my-3"
-                    : "col-3 my-3"
+                    ? "col-6 col-md-3 border active my-3"
+                    : "col-6 col-md-3 my-3"
                 }
                 onClick={() => {
                   this.setState({
@@ -46,7 +46,6 @@ class BackGround extends Component {
               >
                 <label>{item.title}</label>
                 <div
-                  className="container"
                   style={{
                     background: `url(` + item.image + `)`,
                     minHeight: 300,
@@ -64,8 +63,8 @@ class BackGround extends Component {
               <div
                 className={
                   this.state.id === item.id
-                    ? "col-3 border active my-3"
-                    : "col-3 my-3"
+                    ? "col-6 col-md-3 border active my-3"
+                    : "col-6 col-md-3 my-3"
                 }
                 onClick={() => {
                   this.setState({
@@ -96,9 +95,7 @@ class BackGround extends Component {
     return (
       <div className="container">
         <h3>Backgroud</h3>
-        <div className="container">
-          <div className="row">{this.renderHtml()}</div>
-        </div>
+        <div className="row">{this.renderHtml()}</div>
       </div>
     );
   }

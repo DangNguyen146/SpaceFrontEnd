@@ -41,7 +41,7 @@ class DetailPage extends Component {
             />
             <div className="container-fluid mt-5 bg-white p-3">
               <div className="row">
-                <div className="col-2">
+                <div className="col-4 col-md-2">
                   <div className="container">
                     <div
                       className={
@@ -114,7 +114,7 @@ class DetailPage extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-5">
+                <div className="col-4 col-md-5">
                   <div className="container img-card">
                     <InnerImageZoom
                       src={
@@ -132,12 +132,12 @@ class DetailPage extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-5">
+                <div className="col-12 col-md-5">
                   <h2 className="fw-bold">{data.name}</h2>
                   <span>Lượt xem: {datav.view}</span>
                   <h3 className="fw-bold mb-5">Giá: {data.price}</h3>
                   <div className="row">
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                       <button
                         className="btn buttonPurple w-100 w-100 text-center border shadow item-hover-item bg-product"
                         onClick={() => {
@@ -160,7 +160,7 @@ class DetailPage extends Component {
                       </button>
                       <Toaster />
                     </div>
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                       <Link
                         className="btn buttonPurpleOutline  w-100 w-100 text-center border shadow item-hover-item bg-product"
                         to={"/preview/" + id_card}
@@ -168,7 +168,7 @@ class DetailPage extends Component {
                         Preview
                       </Link>
                     </div>
-                    <div className="col-5 mt-3">
+                    <div className="col-12 col-md-5 mt-3">
                       <Link
                         className="btn buttonPurple float-start rounded d-inline w-100"
                         onClick={() => {

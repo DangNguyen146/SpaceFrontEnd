@@ -26,7 +26,7 @@ class TaoCard extends Component {
       <div className="mt-5 pt-4">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-1 text-center py-4 text-light bg-dark ">
+            <div className="col-4 col-md-1 text-center py-4 text-light bg-dark ">
               <div
                 className={
                   this.state.category === 0
@@ -89,12 +89,12 @@ class TaoCard extends Component {
               <hr />
             </div>
             <div
-              className="col-3"
+              className="col-8 col-md-3"
               style={{ backgroundColor: "#293039", minHeight: "95vh" }}
             >
               {this.renderComponent()}
             </div>
-            <div className="col-8">
+            <div className="col-12 col-md-8">
               <CardPreview />
             </div>
           </div>

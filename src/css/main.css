@@ -57,9 +57,15 @@ body {
 
 .Slider #carouselControls .carousel-item .img-cover {
   height: 500px;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .Slider #carouselControls .carousel-item .img-cover {
+    height: 200px;
+  }
 }
 
 .Slider #carouselControls .carousel-control-prev:hover {

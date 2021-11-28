@@ -64,10 +64,10 @@ class QuanLiDonHang extends Component {
           <>
             <div className="col-12 ">
               <div className="row">
-                <div className="col-3">
+                <div className="col-12 col-md-3">
                   <img className="w-100" src={item.image} alt="" />
                 </div>
-                <div className="col-9">
+                <div className="col-12 col-md-9 ">
                   <div className="row">
                     <div className="col-5">Tên sản phẩm: </div>
                     <div className="col-7">
@@ -79,18 +79,18 @@ class QuanLiDonHang extends Component {
                     </div>
                     <div className="col-12 col-md-5">Số lượng sản phẩm:</div>
                     <button
-                      className="col-1 btn btn-dark"
+                      className="col-2 col-md-1 btn btn-dark"
                       onClick={() => {
                         this.props.giamSoLuong(item);
                       }}
                     >
                       -
                     </button>
-                    <div className="col-2 text-center px-2">
+                    <div className="col-4 col-md-2 text-center px-2">
                       <p className="pb-0  mb-0 mt-2 ">{item.soLuong}</p>
                     </div>
                     <button
-                      className="col-1 btn btn-dark"
+                      className="col-2 col-md-1 btn btn-dark"
                       onClick={() => {
                         this.props.tangSoLuong(item);
                       }}
