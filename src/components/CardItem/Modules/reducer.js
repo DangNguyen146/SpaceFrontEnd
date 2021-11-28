@@ -43,6 +43,12 @@ const datHangReducer = (state = sateDefault, action) => {
       state.dangSachCardDangDat = dangSachHangUpDate;
       return { ...state };
     }
+    case "REMOVE_LIST": {
+      let dangSachHangUpDate = [];
+      //cập nhật lại state
+      state.dangSachCardDangDat = dangSachHangUpDate;
+      return { ...state };
+    }
     default: {
       return { ...state };
     }

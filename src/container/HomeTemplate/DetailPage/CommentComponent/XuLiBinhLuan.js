@@ -7,7 +7,7 @@ class XuLiBinhLuan extends Component {
     super(props);
     this.state = { content: "" };
   }
-  handleDelete = (id_Comment) => {
+  handleOnDelete = (id_Comment) => {
     this.props.fetchDeleteComment(id_Comment);
   };
   handleOnChange = (e) => {
@@ -23,7 +23,13 @@ class XuLiBinhLuan extends Component {
     const { item } = this.props;
     return (
       <>
-        <button className="btn btn-danger" onClick={this.handleDelete(item.id)}>
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={() => {
+            this.handleOnDelete(item.id);
+          }}
+        >
           Xóa commnet
         </button>
         <button

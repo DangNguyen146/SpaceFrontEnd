@@ -17,7 +17,6 @@ class Comment extends Component {
   };
 
   handleComment = (e) => {
-    e.preventDefault();
     const { id_Card } = this.props;
     this.props.fetchPostComment(this.state, id_Card);
     this.setState({ content: "", iscommet: 0 });

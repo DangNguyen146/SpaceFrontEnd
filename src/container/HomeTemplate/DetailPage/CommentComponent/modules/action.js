@@ -10,7 +10,8 @@ export const actCommentDetailCardApi = (id) => {
       method: "GET",
     })
       .then((result) => {
-        dispatch(actCommentDetailCardSuccess(result.data));
+        if (result === []) dispatch(actCommentDetailCardSuccess(result));
+        else dispatch(actCommentDetailCardSuccess(result.data));
       })
       .catch((err) => {
         dispatch(actCommentDetailCardFailed(err));

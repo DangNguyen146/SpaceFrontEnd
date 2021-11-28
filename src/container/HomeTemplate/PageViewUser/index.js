@@ -32,17 +32,9 @@ class PageViewUser extends Component {
   render() {
     const { loading, data } = this.props;
     if (loading) return <Loading key={999999} />;
-    if (data === null)
-      return (
-        <Redirect
-          to={{
-            pathname: "/pagenotfound",
-          }}
-        />
-      );
-
     return (
-      data && (
+      data &&
+      (data[0] ? (
         <div
           className="mt-5 pt-5"
           style={{ minHeight: "100vh", backgroundImage: data[0].css }}
@@ -62,7 +54,13 @@ class PageViewUser extends Component {
             <div>{this.renderData(data[0].data)}</div>
           </div>
         </div>
-      )
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/pagenotfound",
+          }}
+        />
+      ))
     );
   }
 }

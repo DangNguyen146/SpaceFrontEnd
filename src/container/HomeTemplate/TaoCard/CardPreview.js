@@ -16,11 +16,21 @@ class CardPreview extends Component {
     this.myRef = React.createRef(null);
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      data: nextProps.data,
-      data2: nextProps.data2,
-      data3: nextProps.data3,
-    });
+    if (nextProps.data !== this.state.data) {
+      this.setState({
+        data: nextProps.data,
+      });
+    }
+    if (nextProps.data2 !== this.state.data2) {
+      this.setState({
+        data2: nextProps.data2,
+      });
+    }
+    if (nextProps.data3 !== this.state.data3) {
+      this.setState({
+        data3: nextProps.data3,
+      });
+    }
   }
   componentDidMount() {
     this.setState({

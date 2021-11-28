@@ -1,4 +1,4 @@
-export const urlApi = "http://127.0.0.1:8000/";
-export const urlImagApi = "http://127.0.0.1:8000";
+export const urlApi = "https://spacedjnagov3.herokuapp.com/";
+export const urlImagApi = "https://spacedjnagov3.herokuapp.com";
 
 export const urlPublic = "http://localhost:3000/";

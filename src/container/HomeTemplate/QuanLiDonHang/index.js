@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { actOrderApi } from "./modulesSubmit/action";
 import Breadcrumb from "../../../components/Breadcrumb";
+import { RemoveHangAction } from "../../../components/CardItem/Modules/action";
 
 class QuanLiDonHang extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class QuanLiDonHang extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.fetchSubmit(this.state, this.props.history);
+    this.props.fetchRemoveList();
   };
   renderTien = () => {
     let sum = 0;
@@ -289,6 +291,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchSubmit: (data, histoty) => {
       dispatch(actOrderApi(data, histoty));
+    },
+    fetchRemoveList: () => {
+      dispatch(RemoveHangAction());
     },
   };
 };

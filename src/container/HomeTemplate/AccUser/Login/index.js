@@ -11,25 +11,14 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      client_id: "",
-      client_secret: "",
+      client_id: "lgmlTrWzph522HpU69rt35RgoV7EVfMqExkrSSD4",
+      client_secret:
+        "1yNn2NNjyF8RuNpvmRuY8TsnXxcNzjQ1mu3NbNJwr0awMTJ7FyxJP1foasJU278l5aSQOI2no6Wfgd8KlS4Yg2kl3dC9hxPhHQ0KbFrbi7N7kkjm7Ln1dxpPf3habfwJ",
       grant_type: "password",
     };
   }
   componentDidMount() {
     document.title = "Space | Đăng nhập";
-
-    Axios.get(urlApi + `oauth2-info/`)
-      .then((res) => {
-        const data = res.data;
-        if (data) {
-          this.setState({
-            client_id: data.client_id,
-            client_secret: data.client_sercet,
-          });
-        }
-      })
-      .catch((error) => console.log(error));
   }
 
   handleOnChange = (e) => {

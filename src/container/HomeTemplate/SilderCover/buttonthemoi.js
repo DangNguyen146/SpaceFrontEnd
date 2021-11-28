@@ -9,7 +9,7 @@ class Buttonthemoi extends Component {
           <div className="d-none d-md-block col"></div>
           <div className="col-12 text-center">
             <Link
-              className="w-50 creatnewcard text-center mx-auto"
+              className="btn w-50 creatnewcard text-center mx-auto text-light"
               to="/taocard"
             >
               <h2 className="p-2 m-0">Tạo một thẻ mới!!!</h2>
