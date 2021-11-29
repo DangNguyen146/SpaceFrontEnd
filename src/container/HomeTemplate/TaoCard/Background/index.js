@@ -11,7 +11,16 @@ class Background extends Component {
     };
   }
   componentDidMount() {
-    // this.props.addBackGround(this.state);
+    const data = this.props.data;
+    if (data.itemBackground) {
+      this.setState({ itemBackground: data.itemBackground });
+    }
+    if (data.backgroundBackground) {
+      console.log(URL.createObjectURL(data.backgroundBackground));
+      document.getElementById("backgroundBackgrounds").src =
+        URL.createObjectURL(data.backgroundBackground);
+      this.setState({ backgroundBackground: data.backgroundBackground });
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (
@@ -28,7 +37,7 @@ class Background extends Component {
   };
   filePreview(e) {
     const file = e.target.files[0];
-    document.getElementById("backgroundBackground").src =
+    document.getElementById("backgroundBackgrounds").src =
       URL.createObjectURL(file);
     this.handleOnChange(e);
   }
@@ -86,7 +95,7 @@ class Background extends Component {
                 this.setState({ itemBackground: 2 });
               }}
             >
-              <img src="" id="backgroundBackground" className="w-100" />
+              <img src="" id="backgroundBackgrounds" className="w-100" />
             </div>
             <div className="col-12  p-2">
               <label

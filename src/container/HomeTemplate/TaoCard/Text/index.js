@@ -23,7 +23,47 @@ class Text extends Component {
     });
   };
   componentDidMount() {
-    // this.props.addLogo(this.state);
+    const data = this.props.data;
+    if (data.name) {
+      document.getElementById("exampleInputText1").value = data.name;
+      this.setState({ name: data.name });
+    }
+    if (data.link) {
+      document.getElementById("exampleInputLink1").value = data.link;
+      this.setState({ link: data.link });
+    }
+    if (data.locatedNameX) {
+      document.getElementById("customNameRangeX").value = parseInt(
+        data.locatedNameX
+      );
+      this.setState({ locatedNameX: data.locatedNameX });
+    }
+    if (data.locatedNameY) {
+      document.getElementById("customNameRangeY").value = parseInt(
+        data.locatedNameY
+      );
+      this.setState({ locatedNameY: data.locatedNameY });
+    }
+    if (data.skewName) {
+      this.setState({ skewName: data.skewName });
+      document.getElementById("customTextRange").value = data.skewName;
+    }
+    if (data.locatedLinkX) {
+      document.getElementById("customLinkRangeX").value = parseInt(
+        data.locatedLinkX
+      );
+      this.setState({ locatedLinkX: data.locatedLinkX });
+    }
+    if (data.locatedLinkY) {
+      document.getElementById("customLinkRangeY").value = parseInt(
+        data.locatedLinkY
+      );
+      this.setState({ locatedLinkY: data.locatedLinkY });
+    }
+    if (data.skewLinkY) {
+      document.getElementById("customRange").value = parseInt(data.skewLinkY);
+      this.setState({ skewLinkY: data.skewLinkY });
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (
@@ -59,6 +99,23 @@ class Text extends Component {
             />
             <h1>Vị trí Name</h1>
             <div className="container">
+              <div className=" w-100 mt-3">
+                <label htmlFor="customRange" className="form-label text-white">
+                  Kích thước text
+                </label>
+                <span className="float-end">{this.state.skewName}</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="2"
+                  onChange={(event) =>
+                    this.setState({ skewName: event.target.value })
+                  }
+                  className="form-range"
+                  id="customTextRange"
+                />
+              </div>
               <div>
                 <label
                   htmlFor="customNameRangeX"
@@ -103,7 +160,7 @@ class Text extends Component {
           </div>
           <div className="mb-3">
             <label
-              htmlFor="exampleInputText1"
+              htmlFor="exampleInputLink1"
               className="form-label text-light fw-bold"
             >
               Link create qr
@@ -111,7 +168,7 @@ class Text extends Component {
             <input
               type="text"
               className="form-control"
-              id="exampleInputText1"
+              id="exampleInputLink1"
               name="link"
               onChange={this.handleOnChange}
             />

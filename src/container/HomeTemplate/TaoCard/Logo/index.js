@@ -19,7 +19,23 @@ class Logo extends Component {
     });
   };
   componentDidMount() {
-    // this.props.addLogo(this.state);
+    const data = this.props.data;
+    if (data.logo) {
+      this.setState({ logo: data.logo });
+    }
+    if (data.sizeLogo) {
+      document.getElementById("customRangeSizeLogo").value = data.sizeLogo;
+      this.setState({ sizeLogo: data.sizeLogo });
+    }
+    if (data.locatedLogoX) {
+      document.getElementById("customRangeLogoX").value = data.locatedLogoX;
+
+      this.setState({ locatedLogoX: data.locatedLogoX });
+    }
+    if (data.locatedLogoY) {
+      document.getElementById("customRangeLogoY").value = data.locatedLogoY;
+      this.setState({ locatedLogoY: data.locatedLogoY });
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (
@@ -89,7 +105,7 @@ class Logo extends Component {
                 this.setState({ sizeLogo: event.target.value })
               }
               className="form-range"
-              id="customRange"
+              id="customRangeSizeLogo"
             />
           </div>
         </div>
@@ -110,7 +126,7 @@ class Logo extends Component {
                 this.setState({ locatedLogoX: event.target.value })
               }
               className="form-range"
-              id="customRangeX"
+              id="customRangeLogoX"
             />
           </div>
           <div className="mt-3">
@@ -127,7 +143,7 @@ class Logo extends Component {
                 this.setState({ locatedLogoY: event.target.value })
               }
               className="form-range"
-              id="customRangeY"
+              id="customRangeLogoY"
             />
           </div>
         </div>

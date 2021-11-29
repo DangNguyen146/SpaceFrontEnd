@@ -70,12 +70,7 @@ class CardPreview extends Component {
       this.state.data3.link !== null && this.state.data3.link !== ""
         ? String(this.state.data3.link)
         : "";
-    let srcBackGround =
-      parseInt(this.state.data2.itemBackground) === 2 &&
-      document.getElementById("backgroundBackground") !== null &&
-      document.getElementById("backgroundBackground").src !== null
-        ? document.getElementById("backgroundBackground").src
-        : "";
+
     return (
       <div className="TaoCard mt-5 pt-5">
         <button
@@ -116,7 +111,12 @@ class CardPreview extends Component {
                           ")",
                       }
                     : {
-                        background: "url(" + srcBackGround + ")",
+                        background:
+                          "url(" +
+                          URL.createObjectURL(
+                            this.state.data2.backgroundBackground
+                          ) +
+                          ")",
                       }
                 }
               >
@@ -149,6 +149,7 @@ class CardPreview extends Component {
                       ? {
                           left: parseInt(this.state.data3.locatedNameX),
                           top: parseInt(this.state.data3.locatedNameY),
+                          fontSize: parseInt(this.state.data3.skewName) + "px",
                         }
                       : ""
                   }
