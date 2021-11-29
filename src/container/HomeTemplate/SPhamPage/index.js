@@ -30,8 +30,8 @@ export default class SPhamPage extends Component {
           text2="Sản phẩm"
           link2={"/sanpham"}
         />
-        <CategorySanPham />
-        <Footer />
+        <CategorySanPham key={2} />
+        <Footer key={3} />
       </div>
     );
   }

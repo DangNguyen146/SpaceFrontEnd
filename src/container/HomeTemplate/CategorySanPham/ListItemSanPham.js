@@ -22,7 +22,8 @@ class ListItemSanPham extends Component {
       const { loading, data } = this.props;
       if (loading) return <Loading key={99999999999} />;
       if (data !== null && data.next !== null) {
-        const temp = parseInt(data.next.substr(34, data.next.length));
+        const temp = parseInt(data.next.substr(48, data.next.length));
+        console.log(data.next.substr(48, data.next.length));
         if (temp === 1) {
           return (
             <>
