@@ -1,16 +1,16 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../config/api";
+import { urlImagApi } from "../../../../../config/api";
 
 export const actCommentDetailCardApi = (id) => {
   return (dispatch) => {
     dispatch(actCommentDetailCardRequest());
     Axios({
-      url: urlApi + "cards/" + id + "/comment/",
+      url: urlImagApi + "/cards/" + id + "/comment/",
       method: "GET",
     })
       .then((result) => {
-        if (result === []) dispatch(actCommentDetailCardSuccess(result));
+        if (result == []) dispatch(actCommentDetailCardSuccess(result));
         else dispatch(actCommentDetailCardSuccess(result.data));
       })
       .catch((err) => {
@@ -22,7 +22,7 @@ export const actDeleteCommentApi = (id) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return () => {
     Axios({
-      url: urlApi + "comments/" + id + "/",
+      url: urlImagApi + "/comments/" + id + "/",
       headers: {
         Authorization: "Bearer " + access_token,
       },
@@ -36,7 +36,7 @@ export const actPacthCommentApi = (data, id) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return () => {
     Axios({
-      url: urlApi + "comments/" + id + "/",
+      url: urlImagApi + "/comments/" + id + "/",
       headers: {
         Authorization: "Bearer " + access_token,
       },

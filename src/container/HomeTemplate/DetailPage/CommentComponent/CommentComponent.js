@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Loading from "../../../../components/Loading";
 import { actCommentDetailCardApi } from "./modules/action";
 import "./comment.css";
-import { urlImagApi } from "../../../../config/api";
 import XuLiBinhLuan from "./XuLiBinhLuan";
 
 class CommentComponent extends Component {

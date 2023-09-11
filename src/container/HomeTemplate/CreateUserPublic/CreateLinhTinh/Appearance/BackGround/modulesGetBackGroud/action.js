@@ -1,12 +1,12 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../../../config/api";
+import { urlImagApi } from "../../../../../../../config/api";
 
 export const actLisBackgroundApi = (page) => {
   return (dispatch) => {
     dispatch(actLisBackgroundApiRequest());
     Axios({
-      url: urlApi + "backgrounds/?page=1",
+      url: urlImagApi + "/backgrounds/?page=1",
       method: "GET",
     })
       .then((result) => {

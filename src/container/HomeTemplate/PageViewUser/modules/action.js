@@ -1,12 +1,12 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actDetailUserApi = (username) => {
   return (dispatch) => {
     dispatch(actDetailUserRequest());
     Axios({
-      url: urlApi + "userviews/views/?q=" + username,
+      url: urlImagApi + "/userviews/views/?q=" + username,
       method: "GET",
     })
       .then((result) => {

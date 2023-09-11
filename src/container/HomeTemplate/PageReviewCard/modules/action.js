@@ -1,13 +1,13 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actPreviewCardApi = (id, data) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return (dispatch) => {
     dispatch(actPreviewCardRequest());
     Axios({
-      url: urlApi + "cards/" + id + "/preview_card/",
+      url: urlImagApi + "/cards/" + id + "/preview_card/",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + access_token,

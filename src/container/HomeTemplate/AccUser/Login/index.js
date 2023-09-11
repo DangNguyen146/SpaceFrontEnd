@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { fetchLoginApi } from "./modules/action";
 import { connect } from "react-redux";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
 import Loading from "../../../../components/Loading";
 
 class Login extends Component {

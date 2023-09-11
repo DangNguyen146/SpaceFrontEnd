@@ -4,7 +4,7 @@ import {
   USER_CHANGEPASSWORD_FAILED,
 } from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 import { Redirect } from "react-router";
 
 export const fetchPutPasswordApi = (user, id) => {
@@ -12,7 +12,7 @@ export const fetchPutPasswordApi = (user, id) => {
   return (dispatch) => {
     actPutPasswordRequest();
     Axios({
-      url: urlApi + "changepasswords/" + id + "/",
+      url: urlImagApi + "/changepasswords/" + id + "/",
       method: "PUT",
       headers: {
         Authorization: "Bearer " + access_token,

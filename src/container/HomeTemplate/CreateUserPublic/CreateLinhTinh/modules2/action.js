@@ -1,13 +1,13 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../config/api";
+import { urlImagApi } from "../../../../../config/api";
 
 export const actCreatePublicUserApi = (datas) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return (dispatch) => {
     dispatch(actCreatePublicUserApiRequest());
     Axios({
-      url: urlApi + "userviews/create_publicuser/",
+      url: urlImagApi + "/userviews/create_publicuser/",
       headers: {
         "content-type": "multipart/form-data",
         Authorization: "Bearer " + access_token,

@@ -1,13 +1,13 @@
 import * as ActionType from "../../DonHangDaDat/modules/constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actOrderApi = (data, histoty) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return (dispatch) => {
     dispatch(actOrderApiRequest());
     Axios({
-      url: urlApi + "orders/add_order/",
+      url: urlImagApi + "/orders/add_order/",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + access_token,

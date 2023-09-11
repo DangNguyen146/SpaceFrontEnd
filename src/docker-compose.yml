@@ -1,0 +1,7 @@
+services:
+  spacezfe:
+    build:
+      context: .
+    container_name: spacezfe
+    ports:
+      - "80:80"

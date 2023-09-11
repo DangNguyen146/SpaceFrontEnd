@@ -4,13 +4,13 @@ import {
   USER_LOGIN_FAILED,
 } from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../config/api";
+import { urlImagApi } from "../../../../../config/api";
 
 export const fetchLoginApi = (user, history) => {
   return (dispatch) => {
     actLoginRequest();
     Axios({
-      url: urlApi + "o/token/",
+      url: urlImagApi + "/o/token/",
       method: "POST",
       data: user,
     })
@@ -21,7 +21,7 @@ export const fetchLoginApi = (user, history) => {
             "access_token",
             JSON.stringify(data.access_token)
           );
-          Axios.get(urlApi + "users/current-user/", {
+          Axios.get(urlImagApi + "/users/current-user/", {
             headers: {
               Authorization: "Bearer " + data.access_token,
             },

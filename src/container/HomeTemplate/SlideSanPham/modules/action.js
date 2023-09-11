@@ -1,13 +1,13 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actLisCardApi = (category_id, page) => {
-  let urls = urlApi + "cards/?page=";
-  if (page) urls = urlApi + "cards/?page=" + page;
-  else urls = urlApi + "cards/?page=1";
+  let urls = urlImagApi + "/cards/?page=";
+  if (page) urls = urlImagApi + "/cards/?page=" + page;
+  else urls = urlImagApi + "/cards/?page=1";
   if (category_id) {
-    urls = urlApi + "cards/?category_id=" + category_id;
+    urls = urlImagApi + "/cards/?category_id=" + category_id;
   }
   return (dispatch) => {
     dispatch(actLisCardApiRequest());

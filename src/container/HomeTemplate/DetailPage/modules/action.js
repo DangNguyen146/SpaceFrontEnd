@@ -1,12 +1,12 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actDetailCardApi = (id) => {
   return (dispatch) => {
     dispatch(actDetailCardRequest());
     Axios({
-      url: urlApi + "cards/" + id + "/",
+      url: urlImagApi + "/cards/" + id + "/",
       method: "GET",
     })
       .then((result) => {
@@ -21,7 +21,7 @@ export const actViewCardApi = (id) => {
   return (dispatch) => {
     dispatch(actViewCardRequest());
     Axios({
-      url: urlApi + "cards/" + id + "/views/",
+      url: urlImagApi + "/cards/" + id + "/views/",
       method: "GET",
     })
       .then((result) => {

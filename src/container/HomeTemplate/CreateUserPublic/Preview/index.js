@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
-import { urlPublic } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 import RenderLink from "./RenderLink";
 import RenderProfile from "./RenderProfile";
 
@@ -113,14 +113,14 @@ class Preview extends Component {
               readOnly
               className="form-control-plaintext"
               id="staticEmail"
-              value={urlPublic + "view/" + userData.username}
+              value={urlImagApi + "/view/" + userData.username}
             />
           </div>
           <button
             className="btn btn-success"
             onClick={() =>
               navigator.clipboard.writeText(
-                urlPublic + "view/" + userData.username
+                urlImagApi + "/view/" + userData.username
               )
             }
           >

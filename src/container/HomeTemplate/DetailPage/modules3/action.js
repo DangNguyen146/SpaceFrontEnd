@@ -1,13 +1,13 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const fetchPostCommentApi = (data, id_card) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return (dispatch) => {
     actCommentRequest();
     Axios({
-      url: urlApi + "cards/" + id_card + "/add-comment/",
+      url: urlImagApi + "/cards/" + id_card + "/add-comment/",
       method: "POST",
       headers: {
         Authorization: "Bearer " + access_token,

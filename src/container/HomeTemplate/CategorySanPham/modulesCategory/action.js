@@ -1,12 +1,12 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const actLisCategoryApi = (category_id) => {
   return (dispatch) => {
     dispatch(actLisCategoryApiRequest());
     Axios({
-      url: urlApi + "categories/",
+      url: urlImagApi + "/categories/",
       method: "GET",
     })
       .then((result) => {

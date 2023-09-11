@@ -4,7 +4,7 @@ import {
   USER_CHANGE_FAILED,
 } from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 import { Redirect } from "react-router";
 
 export const fetchPutApi = (user, id) => {
@@ -12,7 +12,7 @@ export const fetchPutApi = (user, id) => {
   return (dispatch) => {
     actPutRequest();
     Axios({
-      url: urlApi + "updateusers/" + id + "/",
+      url: urlImagApi + "/updateusers/" + id + "/",
       method: "PUT",
       headers: {
         Authorization: "Bearer " + access_token,

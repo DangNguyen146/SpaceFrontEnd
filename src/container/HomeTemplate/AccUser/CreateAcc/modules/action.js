@@ -1,12 +1,12 @@
 import { USER_CREATE_REQUEST, USER_CREATE_FAILED } from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../config/api";
+import { urlImagApi } from "../../../../../config/api";
 
 export const fetchCreateApi = (user, history) => {
   return (dispatch) => {
     dispatch(actCreateRequest());
     Axios({
-      url: urlApi + "users/",
+      url: urlImagApi + "/users/",
       method: "POST",
       data: user,
     })

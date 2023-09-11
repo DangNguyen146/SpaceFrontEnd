@@ -4,13 +4,13 @@ import {
   USER_CONTACT_FAILED,
 } from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../config/api";
+import { urlImagApi } from "../../../../config/api";
 
 export const fetchContactApi = (datas) => {
   return (dispatch) => {
     dispatch(actCreateRequest());
     Axios({
-      url: urlApi + "contacts/add_contact/",
+      url: urlImagApi + "/contacts/add_contact/",
       method: "POST",
       data: datas,
     })

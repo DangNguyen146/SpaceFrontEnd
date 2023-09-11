@@ -1,13 +1,13 @@
 import * as ActionType from "./constant";
 import Axios from "axios";
-import { urlApi } from "../../../../../config/api";
+import { urlImagApi } from "../../../../../config/api";
 
 export const actDetailOrderApi = (id) => {
   let access_token = JSON.parse(localStorage.getItem("access_token"));
   return (dispatch) => {
     dispatch(actDetailOrderApiRequest());
     Axios({
-      url: urlApi + "orders/detail_pages/?order_id=" + id,
+      url: urlImagApi + "/orders/detail_pages/?order_id=" + id,
       headers: {
         Authorization: "Bearer " + access_token,
       },
