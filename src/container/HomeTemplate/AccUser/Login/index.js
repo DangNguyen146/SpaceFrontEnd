@@ -3,6 +3,7 @@ import { fetchLoginApi } from "./modules/action";
 import { connect } from "react-redux";
 import Axios from "axios";
 import Loading from "../../../../components/Loading";
+import { client_id, client_secret } from "../../../../config/api";
 
 class Login extends Component {
   constructor(props) {
@@ -10,9 +11,8 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      client_id: "KqrUS3ckQ9hkoVH1rfjui1a7ubF7oyLuBTWyWVLO",
-      client_secret:
-        "RrA3ycb84FJdTfSi9TaxLpWQwSm1ZKGivPlxeZNhS8XuYXOeIXhbZbnbNF53hGNPQsflRw2VVMF5B1i5N0qVkRdk10a3BiTEWbNyExscGiukn14l3vxH3RBYHEjwNSr3",
+      client_id: client_id,
+      client_secret: client_secret,
       grant_type: "password",
     };
   }
